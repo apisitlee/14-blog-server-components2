@@ -115,11 +115,9 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
       <Alert className="bg-muted border-none">
         <AlertDescription className="space-y-2 text-center">
           <Shield className="text-muted-foreground mx-auto h-10 w-10" />
-          <div className="font-medium">Pending email verification</div>
+          <div className="font-medium">等待电子邮箱验证</div>
           <div className="text-muted-foreground m-auto max-w-lg text-balance text-sm">
-            Thanks for your comment! Please check your email to verify your
-            email and post your comment. If you don&apos;t see it in your inbox,
-            please check your spam folder.
+            谢谢你的评论！请检查您的电子邮件以验证您的发送电子邮件并发表您的评论。如果你在收件箱中没有看到它，请检查您的垃圾邮件文件夹。
           </div>
         </AlertDescription>
       </Alert>
@@ -135,10 +133,10 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
             name="author"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>姓名</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Your name"
+                    placeholder="你的名字"
                     {...field}
                     className="focus-visible:ring-inset"
                   />
@@ -152,7 +150,7 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>邮箱</FormLabel>
                 <FormControl>
                   <Input
                     type="email"
@@ -173,7 +171,7 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
             name="url"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Website (optional)</FormLabel>
+                <FormLabel>网址 (选填)</FormLabel>
                 <FormControl>
                   <Input
                     type="url"
@@ -193,10 +191,10 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
           name="content"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Comment</FormLabel>
+              <FormLabel>评论内容</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Share your thoughts..."
+                  placeholder="留下你的评论..."
                   className="min-h-[120px] resize-y focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-offset-0"
                   {...field}
                 />
@@ -230,7 +228,7 @@ export function CommentForm({ slug, config, onSuccess }: CommentFormProps) {
 
         <div className="flex items-center justify-between pt-2">
           <Button type="submit" disabled={form.formState.isSubmitting}>
-            Post Comment
+            发布评论
           </Button>
         </div>
       </form>

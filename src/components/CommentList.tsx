@@ -34,13 +34,13 @@ interface CommentListProps {
 
 export function CommentList({ comments, config, isLoading }: CommentListProps) {
   if (isLoading) {
-    return <div className="animate-pulse">Loading comments...</div>;
+    return <div className="animate-pulse">评论加载中...</div>;
   }
 
   if (comments.length === 0) {
     return (
       <div className="text-muted-foreground mt-8 text-center">
-        No comments yet. Be the first to comment!
+        还没有评论，快来添加一条评论吧！
       </div>
     );
   }
@@ -52,7 +52,7 @@ export function CommentList({ comments, config, isLoading }: CommentListProps) {
           {comment.parent && (
             <div className="ml-8 border-l-2 pl-4">
               <div className="text-muted-foreground mb-2 text-sm">
-                In reply to {comment.parent.author}
+                回复 {comment.parent.author}
               </div>
               <div className="text-muted-foreground whitespace-pre-line text-sm">
                 {comment.parent.content}
